@@ -6,7 +6,7 @@ public class Main {
 			
 		LightsOutGame lightsoutgame1 = new LightsOutGame ();
 		
-		lightsoutgame1.start();
+		lightsoutgame1.play();
 	}
 
 }
