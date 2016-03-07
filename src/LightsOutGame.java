@@ -1,3 +1,4 @@
+// TODO udpate comment by adding a link to a description of the game, in english
 /**
  * This class represents a Lightsout game
  * @author battonh
@@ -15,8 +16,7 @@ public class LightsOutGame {
 		
 	}		
 	
-	
-	
+	// TODO clean comment (ask for advice)
 	/**
 	* If you click on a lamp, this one and the others around change their states (on or off).
 	* A counter (initialized at 0) displays the number of clicks.
