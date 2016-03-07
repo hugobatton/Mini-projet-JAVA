@@ -1,15 +1,24 @@
-// TODO update README.md (what/who)
+// TODO (DONE) update README.md (what/who)
 
-// TODO write comment
+
+// TODO (DONE) write comment
+
+/**
+ * The Main class is an application.
+ */
+
+
 public class Main {
 
-	// TODO write comment
+	// TODO (DONE)write comment
+	/**
+	 * That's the gateway of the application.
+	 */
 	public static void main(String[] args) {
 
-		// TODO simplify, by avoiding to use a local variable
-		LightsOutGame lightsoutgame1 = new LightsOutGame ();
+		// (DONE) TODO simplify, by avoiding to use a local variable
 		
-		lightsoutgame1.play();
+		new LightsOutGame().play();
 	}
 
 }
