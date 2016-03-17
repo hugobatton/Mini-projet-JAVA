@@ -1,23 +1,21 @@
-// TODO (DONE) update README.md (what/who)
-
-
-// TODO (DONE) write comment
+// TODO fix README.md (text encoding)
 
 /**
- * The Main class is an application.
+ * Application that launches a LightsOutGame
  */
 
+public class Main
+{
 
-public class Main {
-
-	// TODO (DONE)write comment
 	/**
-	 * That's the gateway of the application.
+	 * Application's main
+	 * 
+	 * @param args
+	 *            command-line arguments (unused)
 	 */
-	public static void main(String[] args) {
+	public static void main(String[] args)
+	{
 
-		// (DONE) TODO simplify, by avoiding to use a local variable
-		
 		new LightsOutGame().play();
 	}
 
