@@ -9,4 +9,18 @@ public class Grid
 		
 	}
 
+	public boolean isAtLeastOneLampLit() 
+	{
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public boolean position() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	
+	
+	
 }

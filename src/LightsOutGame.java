@@ -10,7 +10,13 @@ public class LightsOutGame
 {
 
 	// TODO write comment
+	
+	/**
+	 * Creation of a game grid
+	 */
+	
 	private Grid grid;
+	private Lamp lamp;
 
 	/**
 	 * Creation of a new lightsout game ready to play (the grid contains
@@ -19,17 +25,26 @@ public class LightsOutGame
 	public LightsOutGame()
 	{
 		this.grid = new Grid();
+		this.player= new Player();
+		this.lamp=new Lamp();
 	}
-
+	
+	
+	public Player player;
+	
+	
+	
 	// TODO detail algorithm (ask for advice)
 	/**
 	 * Play the game Ligthsout is a turn based strategy game(one player).
 	 * 
 	 * 
 	 * 
-	 * while all the lamp aren't off : we can continue begin a turn ( the number
-	 * of turn isn't a constraint) if you click on a lamp , this lamp and the 4
-	 * around swap their states if the player gives up , the game stops *
+	 * while <all the lamps aren't off> 
+	 * 	do
+	 * 		<ask the player which position to switch>
+	 * 	while (<position is not valid>)
+	 * 	<switch the lamp at this position and its neighnours>
 	 * 
 	 */
 
@@ -37,6 +52,18 @@ public class LightsOutGame
 
 	{
 
+		while (this.grid.isAtLeastOneLampLit())
+				do
+					this.player.AskPosition();
+			
+				while (this.grid.isPositionValid(position))
+					do 
+						this.lamp.SwitchStateOfLamp();
+				
+					
+			
+						
+		
 	}
 
 }
