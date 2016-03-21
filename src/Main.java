@@ -1,4 +1,5 @@
 // TODO fix README.md (text encoding)
+// DONE
 
 /**
  * Application that launches a LightsOutGame

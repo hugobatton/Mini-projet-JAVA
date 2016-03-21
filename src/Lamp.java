@@ -1,16 +1,17 @@
 
 public class Lamp {
 
+	public boolean stateoflamp;
 	
-	public Lamp ()
+
 	
+	public void SwitchStateOfLamp()
 	{
-		
+		if (stateoflamp==false){
+			stateoflamp=true;
+		}
+		else stateoflamp=false;
 	}
-	
-	public SwitchStateOfLamp()
-	{
-		
-	}
-	
+
+
 }

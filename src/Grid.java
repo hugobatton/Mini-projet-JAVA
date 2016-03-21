@@ -3,7 +3,19 @@ public class Grid
 {
 	/**
 	 * Creates a new grid with randomly lit lamps
+	 * 
+	 
 	 */
+	
+	/**
+	 * Creation of the lamps on the grid
+	 */
+	
+
+	
+	
+	
+	
 	public Grid()
 	{
 		
@@ -15,7 +27,8 @@ public class Grid
 		return false;
 	}
 
-	public boolean position() {
+
+	public boolean isPositionValid(Position position) {
 		// TODO Auto-generated method stub
 		return false;
 	}

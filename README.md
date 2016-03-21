@@ -1,4 +1,4 @@
 # Mini-projet-JAVA
 Projet S2
-BATTON Hugo / DAZY Nicodème
+BATTON Hugo / DAZY NicodÃ¨me
 Game: Lightsout
