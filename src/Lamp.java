@@ -3,7 +3,11 @@ public class Lamp {
 
 	public boolean stateoflamp;
 	
-
+	public Lamp ()
+	{
+		this.stateoflamp=true;
+		
+	}
 	
 	public void SwitchStateOfLamp()
 	{

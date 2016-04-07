@@ -11,11 +11,16 @@ public class LightsOutGame {
 	// DONE
 
 	/**
-	 * Creation of a game grid
+	 *the game grid
 	 */
 
 	private Grid grid;
-	private Lamp lamp;
+	
+	/**
+	 * the player
+	 */
+
+	private Player player;
 
 	/**
 	 * Creation of a new lightsout game ready to play (the grid contains
@@ -25,14 +30,8 @@ public class LightsOutGame {
 	public LightsOutGame() {
 		this.grid = new Grid();
 		this.player = new Player();
-		this.lamp = new Lamp();
 	}
 
-	/**
-	 * Creation of a player
-	 */
-
-	public Player player;
 
 	/**
 	 * Play the game Ligthsout is a turn based strategy game(one player).
@@ -57,16 +56,13 @@ public class LightsOutGame {
 			do
 				position = this.player.askPosition();
 
-			while (this.grid.isPositionValid(position));
+			while (!this.grid.isPositionValid(position));
 
-			this.switchStateAround(position);
+			grid.switchStateAround(position);
 		}
 
 	}
 
-	private void switchStateAround(Position position) {
-		// TODO Auto-generated method stub
 
-	}
 
 }
