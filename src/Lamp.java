@@ -1,7 +1,7 @@
 
 public class Lamp {
 
-	public boolean stateoflamp;
+	public static boolean stateoflamp;
 	
 	public Lamp ()
 	{

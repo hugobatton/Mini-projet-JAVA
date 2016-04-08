@@ -18,6 +18,7 @@ public class Main
 	{
 
 		new LightsOutGame().play();
+		
 	}
 
 }
