@@ -76,11 +76,19 @@ public class Grid
 	{
 		if(isPositionValid(position.getX()-1, position.getY())==true)
 		{
-		stateOfLamps[(position.getX())-1][position.getY()] = ! stateOfLamps[position.getX()-1][position.getY()];
+			stateOfLamps[(position.getX())-1][position.getY()] = ! stateOfLamps[position.getX()-1][position.getY()];
 		}
-		stateOfLamps[(position.getX())+1][position.getY()] = ! stateOfLamps[position.getX()+1][position.getY()];
-		stateOfLamps[(position.getX())][position.getY()-1] = ! stateOfLamps[position.getX()][position.getY()-1];
-		stateOfLamps[(position.getX())][position.getY()+1] = ! stateOfLamps[position.getX()][position.getY()+1];
+		if(isPositionValid(position.getX()-1, position.getY())==true)
+		{
+			stateOfLamps[(position.getX())+1][position.getY()] = ! stateOfLamps[position.getX()+1][position.getY()];
+		}
+		if(isPositionValid(position.getX()-1, position.getY())==true)
+		{
+			stateOfLamps[(position.getX())][position.getY()-1] = ! stateOfLamps[position.getX()][position.getY()-1];
+		}
+		if(isPositionValid(position.getX()-1, position.getY())==true)
+			stateOfLamps[(position.getX())][position.getY()+1] = ! stateOfLamps[position.getX()][position.getY()+1];
+		}
 	}
 
 

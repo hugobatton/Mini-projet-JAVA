@@ -1,12 +1,14 @@
 public class Position {
 
-	private  int x, y;
+	private final int x, y;
+	
 	
 	public Position(int x0, int y0)
 	
 	{
 		this.x=x0;
 		this.y=y0;
+	
 	}
 	
 	
@@ -19,6 +21,15 @@ public class Position {
 	public int getY()
 	{
 		return this.y;	
+		
+	}
+	
+	
+	public Position TranslatePosition(int x, int y)
+	
+	{
+		
+		return ;
 		
 	}
 	
