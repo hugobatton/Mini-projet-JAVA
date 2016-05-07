@@ -16,7 +16,12 @@ public class Grid
 	 */
 	private boolean[][] stateOfLamps;
 	
+	/**
+	 * 
+	 */
+	private Position [] lamp_position_around;
 	
+	private final static int NBR_LINES=3;
 	
 	private final static int NB_COLUMNS=4;
 	private final static int NB_LINES=4;
@@ -28,6 +33,7 @@ public class Grid
 	public Grid()
 	{
 		this.stateOfLamps = new boolean[NB_LINES][NB_COLUMNS];
+		this.lamp_position_around= new Position[NBR_LINES];
 	
 	}
 	
@@ -71,27 +77,23 @@ public class Grid
 	/**
 	 * switchStateAround is a method that changes the state of the four lamps around a position
 	 */
-
-	public void switchStateAround(Position position)
+	public void switchStateAround(Position translated_position)
 	{
-		if(isPositionValid(position.getX()-1, position.getY())==true)
+		for (int i=0;i<NBR_LINES;i++)
 		{
-			stateOfLamps[(position.getX())-1][position.getY()] = ! stateOfLamps[position.getX()-1][position.getY()];
+		if (isPositionValid(translated_position)==true)
+			{
+			
+				lamp_position_around[i]= translated_position ;
+			}
+			
+			
 		}
-		if(isPositionValid(position.getX()-1, position.getY())==true)
+		for (int k=0 ;k <NBR_LINES ; k++)
 		{
-			stateOfLamps[(position.getX())+1][position.getY()] = ! stateOfLamps[position.getX()+1][position.getY()];
-		}
-		if(isPositionValid(position.getX()-1, position.getY())==true)
-		{
-			stateOfLamps[(position.getX())][position.getY()-1] = ! stateOfLamps[position.getX()][position.getY()-1];
-		}
-		if(isPositionValid(position.getX()-1, position.getY())==true)
-			stateOfLamps[(position.getX())][position.getY()+1] = ! stateOfLamps[position.getX()][position.getY()+1];
+			stateOfLamps [(position.getX1())][position.getY1] = ! stateOfLamps [(position.getX1())][(position.getY1())];
 		}
 	}
 
-
-	
-	
+      
 }
