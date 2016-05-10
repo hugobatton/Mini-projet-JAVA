@@ -77,21 +77,21 @@ public class Grid
 	/**
 	 * switchStateAround is a method that changes the state of the four lamps around a position
 	 */
-	public void switchStateAround(Position translated_position)
+	public void switchStateAround(Position position)
 	{
 		for (int i=0;i<NBR_LINES;i++)
 		{
-		if (isPositionValid(translated_position)==true)
+		if (isPositionValid(position)==true)
 			{
 			
-				lamp_position_around[i]= translated_position ;
+				lamp_position_around[i]=position;
 			}
 			
 			
 		}
 		for (int k=0 ;k <NBR_LINES ; k++)
 		{
-			stateOfLamps [(position.getX1())][position.getY1] = ! stateOfLamps [(position.getX1())][(position.getY1())];
+			stateOfLamps [position.GetX_Translate()][position.GetY_Translate()] = ! stateOfLamps [position.GetX_Translate()][position.GetY_Translate()];
 		}
 	}
 

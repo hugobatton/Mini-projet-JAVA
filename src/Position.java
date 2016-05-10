@@ -2,7 +2,7 @@ public class Position
 {
 	private final int x, y;
 	private int x1,y1;
-	private Position translated_position;
+	
 	
 	
 	
@@ -24,30 +24,30 @@ public class Position
 	public int getY()
 	{
 		return this.y;	
-		
 	}
 	
 	
-	
-	public Position TranslatePosition(int xi , int yi)
+
+	public  Position getTranslatePosition(int deltarow, int deltacolumn)
 	
 	{
-		this.x1=x+xi;
-		this.y1=y+yi;
-		this.translated_position= new Position (x1,y1);
-		return translated_position;
-		
-		
+		return new Position(x1=this.x+deltarow,y1=this.y+deltacolumn);
 	}
 	
-	public int getX1()
-	{
-		return this.x1;
-	}
-	
-	public int getY1 ()
+	public int GetY_Translate()
 	{
 		return this.y1;
 	}
 	
+	public int GetX_Translate()
+	{
+		return this.x1;
+	}
+	
 }
+
+
+
+
+	
+
