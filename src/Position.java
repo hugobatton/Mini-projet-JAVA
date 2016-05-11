@@ -1,7 +1,7 @@
 public class Position 
 {
 	private final int x, y;
-	private int x1,y1;
+
 	
 	
 	
@@ -31,19 +31,10 @@ public class Position
 	public  Position getTranslatePosition(int deltarow, int deltacolumn)
 	
 	{
-		return new Position(x1=this.x+deltarow,y1=this.y+deltacolumn);
+		return new Position(this.x+deltarow,this.y+deltacolumn);
 	}
 	
-	public int GetY_Translate()
-	{
-		return this.y1;
-	}
-	
-	public int GetX_Translate()
-	{
-		return this.x1;
-	}
-	
+
 }
 
 

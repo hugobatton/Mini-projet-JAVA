@@ -14,12 +14,12 @@ public class Grid
 	/**
 	 * A two-dimensional matrix which contains lamp positions (x,y). Position (2,3) corresponds to lamps[2][3] 
 	 */
-	private boolean[][] stateOfLamps;
+	private boolean[][] stateOfLamps = new boolean[4][4];
 	
 	/**
 	 * 
 	 */
-	private Position [] lamp_position_around;
+	
 	
 	private final static int NBR_LINES=3;
 	
@@ -33,7 +33,7 @@ public class Grid
 	public Grid()
 	{
 		this.stateOfLamps = new boolean[NB_LINES][NB_COLUMNS];
-		this.lamp_position_around= new Position[NBR_LINES];
+		//this.lamp_position_around= new Position[NBR_LINES];
 	
 	}
 	
@@ -79,20 +79,44 @@ public class Grid
 	 */
 	public void switchStateAround(Position position)
 	{
-		for (int i=0;i<NBR_LINES;i++)
-		{
+		
+		Position [] lamp_position_around= new Position[3];
+		
+	
 		if (isPositionValid(position)==true)
-			{
 			
-				lamp_position_around[i]=position;
-			}
-			
-			
-		}
-		for (int k=0 ;k <NBR_LINES ; k++)
 		{
-			stateOfLamps [position.GetX_Translate()][position.GetY_Translate()] = ! stateOfLamps [position.GetX_Translate()][position.GetY_Translate()];
+			lamp_position_around[0] = position.getTranslatePosition(0, 1);
+			lamp_position_around[1] = position.getTranslatePosition(-1, 0);
+			lamp_position_around[2] = position.getTranslatePosition(0, -1);
+			lamp_position_around[3] = position.getTranslatePosition(1, 0);
 		}
+		
+		for (int i=0;i<3;i++)
+		{
+			if (isPositionValid(lamp_position_around[i])==true)
+			{
+				this.stateOfLamps[lamp_position_around[i].getX()][lamp_position_around[i].getY()] = !stateOfLamps[lamp_position_around[i].getX()][lamp_position_around[i].getY()];
+			}
+		}
+		
+		
+			
+		}
+	
+	
+	public String toString()
+	{
+		StringBuilder represente= new StringBuilder(NB_LINES+NB_COLUMNS+1);
+		for(int i=0; i<NB_LINES;i++)
+		{
+			for(int j=0; j<NB_COLUMNS; j++)
+			{
+				represente.append(stateOfLamps[i][j]);
+			}
+			represente.append("\n");
+		}
+		return represente.toString();
 	}
 
       

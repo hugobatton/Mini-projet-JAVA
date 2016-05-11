@@ -49,7 +49,7 @@ public class LightsOutGame {
 	public void play()
 
 	{
-
+	
 		Position position = null;
 
 		while (this.grid.isAtLeastOneLampLit()) {
