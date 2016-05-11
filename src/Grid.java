@@ -1,3 +1,5 @@
+import java.util.Random;
+
 
 /**
  * A 2D grid containing lamps
@@ -19,7 +21,7 @@ public class Grid
 	/**
 	 * 
 	 */
-	
+	private Random random;
 	
 	private final static int NBR_LINES=3;
 	
@@ -33,7 +35,23 @@ public class Grid
 	public Grid()
 	{
 		this.stateOfLamps = new boolean[NB_LINES][NB_COLUMNS];
-		//this.lamp_position_around= new Position[NBR_LINES];
+		stateOfLamps[0][0]= true;
+		stateOfLamps[0][1]= true;
+		stateOfLamps[0][2]= true;
+		stateOfLamps[0][3]= false;
+		stateOfLamps[1][0]= true;
+		stateOfLamps[1][1]= true;
+		stateOfLamps[1][2]= true;
+		stateOfLamps[1][3]= true;
+		stateOfLamps[2][0]= true;
+		stateOfLamps[2][1]= false;
+		stateOfLamps[2][2]= true;
+		stateOfLamps[2][3]= true;
+		stateOfLamps[3][0]= true;
+		stateOfLamps[3][1]= false;
+		stateOfLamps[3][2]= true;
+		stateOfLamps[3][3]= true;
+		
 	
 	}
 	
@@ -92,7 +110,7 @@ public class Grid
 			lamp_position_around[3] = position.getTranslatePosition(1, 0);
 		}
 		
-		for (int i=0;i<3;i++)
+		for (int i=0;i<NBR_LINES;i++)
 		{
 			if (isPositionValid(lamp_position_around[i])==true)
 			{
@@ -113,6 +131,8 @@ public class Grid
 			for(int j=0; j<NB_COLUMNS; j++)
 			{
 				represente.append(stateOfLamps[i][j]);
+				represente.append("\t");
+				
 			}
 			represente.append("\n");
 		}

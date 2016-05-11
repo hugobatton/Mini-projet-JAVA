@@ -1,10 +1,6 @@
 public class Position 
 {
 	private final int x, y;
-
-	
-	
-	
 	
 	public Position(int x0, int y0)
 	
@@ -35,6 +31,11 @@ public class Position
 	}
 	
 
+	@Override
+	public String toString()
+	{
+		return "Position [row=" + x + ", column=" + y + "]";
+	}
 }
 
 
