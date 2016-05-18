@@ -27,9 +27,14 @@ public class LightsOutGame {
 	 * randomly lit lamps)
 	 */
 
+	public LightsOutGame(String name) {
+		this.grid = new Grid();
+		this.player = new HumanPlayer(name);
+	}
+	
 	public LightsOutGame() {
 		this.grid = new Grid();
-		this.player = new Player();
+		this.player = new IAPlayer();
 	}
 
 
@@ -54,13 +59,15 @@ public class LightsOutGame {
 
 		while (this.grid.isAtLeastOneLampLit()) {
 			do
-				position = this.player.askPosition();
+				position = this.player.askPosition(this.grid);
 
 			while (!this.grid.isPositionValid(position));
 
 			grid.switchStateAround(position);
+			System.out.println(grid);
 		}
-
+		
+		System.out.println("Partie terminée");
 	}
 
 

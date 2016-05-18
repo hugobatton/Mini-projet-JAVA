@@ -1,12 +1,20 @@
+import java.util.Random;
+
 /**
  * This class permits to interact with the player
  */
-public class Player {
+public abstract class Player {
 
-	public Position askPosition()
+
+	private String name;
+	
+	public Player(String name)
+	
 	{
-		return new Position(0,0);
+		this.name=name;
 	}
+	
+	public abstract Position askPosition(Grid grid);
 	
 }
 

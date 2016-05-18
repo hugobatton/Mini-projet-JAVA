@@ -1,3 +1,5 @@
+import java.util.Random;
+
 
 /**
  * A 2D grid containing lamps
@@ -33,7 +35,11 @@ public class Grid
 	public Grid()
 	{
 		this.stateOfLamps = new boolean[NB_LINES][NB_COLUMNS];
-		//this.lamp_position_around= new Position[NBR_LINES];
+		Random random= new Random();
+		for (int i=0;i<NB_LINES;i++)
+			for (int j=0;j<NB_COLUMNS;j++)
+				this.stateOfLamps[i][j]= random.nextBoolean();
+		
 	
 	}
 	
@@ -52,6 +58,12 @@ public class Grid
 		
 		
 	}
+	
+	public static void initGrid()
+	{
+		
+	
+	}
 
 /**
  * isPositionValid is a method that checks if there is a lamp where we ask.
@@ -59,14 +71,14 @@ public class Grid
 	public boolean isPositionValid(Position position) {
 		// TODO Auto-generated method stub
 		
-			if (position.getX()>NB_COLUMNS && position.getX()<0)
+			if (position.getX()>=NB_COLUMNS || position.getX()<0)
 			{
-				System.out.println("position invalide");
+				//System.out.println("position invalide");
 				return false;
 			}
-			if (position.getY()>NB_LINES && position.getY()<0)
+			if (position.getY()>=NB_LINES || position.getY()<0)
 			{
-				System.out.println("position invalide");
+				//System.out.println("position invalide");
 				return false;
 			}
 			
@@ -80,7 +92,7 @@ public class Grid
 	public void switchStateAround(Position position)
 	{
 		
-		Position [] lamp_position_around= new Position[3];
+		Position [] lamp_position_around= new Position[4];
 		
 	
 		if (isPositionValid(position)==true)
@@ -92,13 +104,15 @@ public class Grid
 			lamp_position_around[3] = position.getTranslatePosition(1, 0);
 		}
 		
-		for (int i=0;i<3;i++)
+		for (int i=0;i<4;i++)
 		{
 			if (isPositionValid(lamp_position_around[i])==true)
 			{
 				this.stateOfLamps[lamp_position_around[i].getX()][lamp_position_around[i].getY()] = !stateOfLamps[lamp_position_around[i].getX()][lamp_position_around[i].getY()];
 			}
 		}
+		
+		stateOfLamps[position.getX()][position.getY()] = (stateOfLamps[position.getX()][position.getY()] == false) ? true : false;
 		
 		
 			
@@ -113,10 +127,22 @@ public class Grid
 			for(int j=0; j<NB_COLUMNS; j++)
 			{
 				represente.append(stateOfLamps[i][j]);
+				represente.append("\t");
+				
 			}
 			represente.append("\n");
 		}
 		return represente.toString();
+	}
+	
+
+	public static int getNbColumns() {
+		return NB_COLUMNS;
+	}
+
+
+	public static int getNbLines() {
+		return NB_LINES;
 	}
 
       
