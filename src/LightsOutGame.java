@@ -58,13 +58,18 @@ public class LightsOutGame {
 		Position position = null;
 
 		while (this.grid.isAtLeastOneLampLit()) {
-			do
-				position = this.player.askPosition(this.grid);
-
-			while (!this.grid.isPositionValid(position));
-
-			grid.switchStateAround(position);
-			System.out.println(grid);
+			for(int i=0; i<=i ;i++)
+			{
+					do 
+					position = this.player.askPosition(this.grid);
+					
+				while (!this.grid.isPositionValid(position));
+					grid.switchStateAround(position);
+				
+				System.out.println(grid);
+				System.out.println("tour \t" +i);
+			}
+				
 		}
 		
 		System.out.println("Partie terminée");
