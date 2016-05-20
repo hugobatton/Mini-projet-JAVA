@@ -22,25 +22,8 @@ public class Main
 	 */
 	public static void main(String[] args)
 	{
-		Scanner scanner =new Scanner(System.in);
-		System.out.println("Enter your name");
-		String name=scanner.nextLine();
-		Grid grid= new Grid();
 		
-		
-		
-		System.out.println(grid);
-		Scanner sc = new Scanner(System.in);
-		System.out.println("Veuillez saisir votre nom :");
-		String str = sc.nextLine();  
-		System.out.println("Joueur : " + str);
 		new LightsOutGame().play();
-
-		
-
-		
-		
-		
 		
 		
 	}

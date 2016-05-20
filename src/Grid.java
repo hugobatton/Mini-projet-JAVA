@@ -23,8 +23,6 @@ public class Grid
 	 */
 	
 	
-	private final static int NBR_LINES=3;
-	
 	private final static int NB_COLUMNS=4;
 	private final static int NB_LINES=4;
 	
@@ -52,18 +50,13 @@ public class Grid
 	{
 		for (int i=0;i<NB_LINES;i++)
 			for (int j=0;j<NB_COLUMNS;j++)
-				if (stateOfLamps[i][j]==true) return true;
+				if (stateOfLamps[i][j]) return true;
 		return false;
 		
 		
 		
 	}
 	
-	public static void initGrid()
-	{
-		
-	
-	}
 
 /**
  * isPositionValid is a method that checks if there is a lamp where we ask.
@@ -95,7 +88,7 @@ public class Grid
 		Position [] lamp_position_around= new Position[4];
 		
 	
-		if (isPositionValid(position)==true)
+		if (isPositionValid(position))
 			
 		{
 			lamp_position_around[0] = position.getTranslatePosition(0, 1);
@@ -106,7 +99,7 @@ public class Grid
 		
 		for (int i=0;i<4;i++)
 		{
-			if (isPositionValid(lamp_position_around[i])==true)
+			if (isPositionValid(lamp_position_around[i]))
 			{
 				this.stateOfLamps[lamp_position_around[i].getX()][lamp_position_around[i].getY()] = !stateOfLamps[lamp_position_around[i].getX()][lamp_position_around[i].getY()];
 			}
