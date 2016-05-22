@@ -1,5 +1,9 @@
 import java.util.Scanner;
-
+/**
+ * this class permits to a real player to interact with the grid
+ * @author Hugo
+ *
+ */
 
 public class MainWithPlayerInput {
 

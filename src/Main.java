@@ -8,18 +8,13 @@ import java.util.Scanner;
 import java.util.*;
 
 /**
- * Application that launches a LightsOutGame
+ * Application that launches a LightsOutGame with an IA player
  */
 
 public class Main
 {
 
-	/**
-	 * Application's main
-	 * 
-	 * @param args
-	 *            command-line arguments (unused)
-	 */
+	
 	public static void main(String[] args)
 	{
 		

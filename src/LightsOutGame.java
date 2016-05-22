@@ -23,14 +23,19 @@ public class LightsOutGame {
 	private Player player;
 
 	/**
-	 * Creation of a new lightsout game ready to play (the grid contains
+	 * Creation of a new lightsout game ready to play for real player(the grid contains
 	 * randomly lit lamps)
+	 * @param name 
 	 */
 
 	public LightsOutGame(String name) {
 		this.grid = new Grid();
 		this.player = new HumanPlayer(name);
 	}
+	
+	/**
+	 * Creation of a new lightsout game ready to play (the grid contains randomly lit lamps)
+	 */
 
 	public LightsOutGame() {
 		this.grid = new Grid();
@@ -58,17 +63,19 @@ public class LightsOutGame {
 		while (this.grid.isAtLeastOneLampLit()) {
 			System.out.println("tour \t" + i++);
 			System.out.println(this.grid);
+			
 			do
 				position = this.player.askPosition(this.grid);
 
 			while (!this.grid.isPositionValid(position));
 			grid.switchStateAround(position);
-
+			
 			
 
 		}
-
+		System.out.println(this.grid);
 		System.out.println("Partie terminée");
+		
 	}
 
 }

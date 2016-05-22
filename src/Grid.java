@@ -16,14 +16,19 @@ public class Grid
 	/**
 	 * A two-dimensional matrix which contains lamp positions (x,y). Position (2,3) corresponds to lamps[2][3] 
 	 */
-	private boolean[][] stateOfLamps = new boolean[4][4];
+	private boolean[][] stateOfLamps;
 	
 	/**
-	 * 
+	 * This is a constant that represents the numbers of columns of the grid
+	 */
+	
+	private final static int NB_COLUMNS=4;
+	
+	/**
+	 * This is a constant that represents the numbers of lines of the grid
 	 */
 	
 	
-	private final static int NB_COLUMNS=4;
 	private final static int NB_LINES=4;
 	
 	/**
@@ -38,12 +43,17 @@ public class Grid
 			for (int j=0;j<NB_COLUMNS;j++)
 				this.stateOfLamps[i][j]= random.nextBoolean();
 		
-	
 	}
+	
+	
+	
+	
+	
 	
 	
 	/**
 	 * isAtLeastOneLampLit is a method that return true if there is at list one lamp lit, else it returns false 
+	 * @return true if there is at least one lamp lit , else false
 	 */
 
 	public boolean isAtLeastOneLampLit() 
@@ -60,6 +70,8 @@ public class Grid
 
 /**
  * isPositionValid is a method that checks if there is a lamp where we ask.
+ * @param position 
+ * @return True if the position is valid , else returns false
  */
 	public boolean isPositionValid(Position position) {
 		// TODO Auto-generated method stub
@@ -81,6 +93,7 @@ public class Grid
 	
 	/**
 	 * switchStateAround is a method that changes the state of the four lamps around a position
+	 * @param position 
 	 */
 	public void switchStateAround(Position position)
 	{
@@ -112,6 +125,12 @@ public class Grid
 		}
 	
 	
+	
+	/**
+	 * This is the redefinition of the toString method in order to trace it on the monitor.
+	 */
+	
+	
 	public String toString()
 	{
 		StringBuilder represente= new StringBuilder(NB_LINES+NB_COLUMNS+1);
@@ -129,10 +148,20 @@ public class Grid
 	}
 	
 
+	/**
+	 * Getter that returns the numbers of columns of the grid
+	 * @return NB_COLUMNS
+	 */
 	public static int getNbColumns() {
 		return NB_COLUMNS;
 	}
-
+	
+	
+	
+/**
+ * Getter that returns the numbers of lines of the grid
+ * @return NB_LINES
+ */
 
 	public static int getNbLines() {
 		return NB_LINES;
