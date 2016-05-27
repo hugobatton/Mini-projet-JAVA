@@ -74,7 +74,7 @@ public class LightsOutGame {
 
 		}
 		System.out.println(this.grid);
-		System.out.println("Partie terminée");
+		System.out.println("Partie terminée en "+ i+" tour");
 		
 	}
 

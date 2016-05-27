@@ -33,9 +33,10 @@ public class HumanPlayer extends Player {
 	
 	/**
 	 * This method permits to the player to interact with grid play.
+	 * @throws InvalidPositionException 
 	 */
 	
-	public  Position askPosition(Grid grid)
+	public  Position askPosition(Grid grid) 
 	{
 		int number_of_line;
 		int number_of_column;

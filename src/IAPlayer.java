@@ -14,6 +14,6 @@ public class IAPlayer extends Player {
 	public Position askPosition(Grid grid)
 	{
 		
-		return new Position(this.random.nextInt(grid.getNbColumns()) ,this.random.nextInt(grid.getNbLines()));
+		return new Position(this.random.nextInt(Position.getNbColumns()) ,this.random.nextInt(Position.getNbLines()));
 	}
 }

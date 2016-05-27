@@ -16,7 +16,7 @@ public class MainWithPlayerInput {
 		System.out.println("Enter your name");
 		String name=scanner.nextLine();
 		new LightsOutGame(name).play();
-
+	
 		
 		
 		

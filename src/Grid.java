@@ -18,18 +18,7 @@ public class Grid
 	 */
 	private boolean[][] stateOfLamps;
 	
-	/**
-	 * This is a constant that represents the numbers of columns of the grid
-	 */
 	
-	private final static int NB_COLUMNS=4;
-	
-	/**
-	 * This is a constant that represents the numbers of lines of the grid
-	 */
-	
-	
-	private final static int NB_LINES=4;
 	
 	/**
 	 * Creates a new 2D grid with randomly lit lamps
@@ -37,10 +26,10 @@ public class Grid
 	 */
 	public Grid()
 	{
-		this.stateOfLamps = new boolean[NB_LINES][NB_COLUMNS];
+		this.stateOfLamps = new boolean[Position.getNbLines()][Position.getNbColumns()];
 		Random random= new Random();
-		for (int i=0;i<NB_LINES;i++)
-			for (int j=0;j<NB_COLUMNS;j++)
+		for (int i=0;i<Position.getNbLines();i++)
+			for (int j=0;j<Position.getNbColumns();j++)
 				this.stateOfLamps[i][j]= random.nextBoolean();
 		
 	}
@@ -58,8 +47,8 @@ public class Grid
 
 	public boolean isAtLeastOneLampLit() 
 	{
-		for (int i=0;i<NB_LINES;i++)
-			for (int j=0;j<NB_COLUMNS;j++)
+		for (int i=0;i<Position.getNbLines();i++)
+			for (int j=0;j<Position.getNbColumns();j++)
 				if (stateOfLamps[i][j]) return true;
 		return false;
 		
@@ -76,12 +65,12 @@ public class Grid
 	public boolean isPositionValid(Position position) {
 		// TODO Auto-generated method stub
 		
-			if (position.getX()>=NB_COLUMNS || position.getX()<0)
+			if (position.getNumberOfLines()>=Position.getNbColumns() || position.getNumberOfLines()<0)
 			{
 				//System.out.println("position invalide");
 				return false;
 			}
-			if (position.getY()>=NB_LINES || position.getY()<0)
+			if (position.getNumberOfColumns()>=Position.getNbLines() || position.getNumberOfColumns()<0)
 			{
 				//System.out.println("position invalide");
 				return false;
@@ -114,11 +103,11 @@ public class Grid
 		{
 			if (isPositionValid(lamp_position_around[i]))
 			{
-				this.stateOfLamps[lamp_position_around[i].getX()][lamp_position_around[i].getY()] = !stateOfLamps[lamp_position_around[i].getX()][lamp_position_around[i].getY()];
+				this.stateOfLamps[lamp_position_around[i].getNumberOfLines()][lamp_position_around[i].getNumberOfColumns()] = !stateOfLamps[lamp_position_around[i].getNumberOfLines()][lamp_position_around[i].getNumberOfColumns()];
 			}
 		}
 		
-		stateOfLamps[position.getX()][position.getY()] = (stateOfLamps[position.getX()][position.getY()] == false) ? true : false;
+		stateOfLamps[position.getNumberOfLines()][position.getNumberOfColumns()] = (stateOfLamps[position.getNumberOfLines()][position.getNumberOfColumns()] == false) ? true : false;
 		
 		
 			
@@ -133,10 +122,10 @@ public class Grid
 	
 	public String toString()
 	{
-		StringBuilder represente= new StringBuilder(NB_LINES+NB_COLUMNS+1);
-		for(int i=0; i<NB_LINES;i++)
+		StringBuilder represente= new StringBuilder(Position.getNbLines()+Position.getNbColumns()+1);
+		for(int i=0; i<Position.getNbLines();i++)
 		{
-			for(int j=0; j<NB_COLUMNS; j++)
+			for(int j=0; j<Position.getNbColumns(); j++)
 			{
 				represente.append(stateOfLamps[i][j]);
 				represente.append("\t");
@@ -148,24 +137,5 @@ public class Grid
 	}
 	
 
-	/**
-	 * Getter that returns the numbers of columns of the grid
-	 * @return NB_COLUMNS
-	 */
-	public static int getNbColumns() {
-		return NB_COLUMNS;
-	}
 	
-	
-	
-/**
- * Getter that returns the numbers of lines of the grid
- * @return NB_LINES
- */
-
-	public static int getNbLines() {
-		return NB_LINES;
-	}
-
-      
 }
