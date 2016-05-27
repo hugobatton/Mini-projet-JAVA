@@ -9,10 +9,6 @@ import java.util.Scanner;
 
 public class HumanPlayer extends Player {
 	
-	/**
-	 * name of the player who plays.
-	 */
-	private String name;
 	
 	/**
 	 * A Scanner type variable in order that player can grasp the informations asked.
